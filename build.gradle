@@ -1,0 +1,23 @@
+buildscript {
+
+    final def gradlePluginVersion = "2.2.2"
+
+    final def classpathDependencies = [
+            gradlePlugin: "com.android.tools.build:gradle:${gradlePluginVersion}"
+    ]
+
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        final Iterable<String> classpathValues = classpathDependencies.values()
+
+        for (final String dependency : classpathValues) classpath dependency
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.allprojects.collect {project -> project.buildDir}
+    followSymlinks false
+}
