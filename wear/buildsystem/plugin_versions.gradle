@@ -1,0 +1,6 @@
+apply plugin: 'com.github.ben-manes.versions'
+
+dependencyUpdates {
+    outputFormatter "json,plain,xml"
+    outputDir new File(project.buildDir, 'outputs/reports/dependencyUpdates').absolutePath
+}

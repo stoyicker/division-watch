@@ -1,0 +1,55 @@
+final def buildToolsVersionValue = "25.0.1"
+final def compileSdkVersionValue = 25
+final def minSdkVersionValue = 21
+final def targetSdkVersionValue = 25
+final def versionCodeValue = 1
+final def versionNameValue = 'DELTA'
+
+apply plugin: 'com.android.application'
+
+android {
+
+    buildToolsVersion buildToolsVersionValue
+    compileSdkVersion compileSdkVersionValue
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+        }
+
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt')
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    defaultConfig {
+        applicationId "org.stoyicker.divisionwatch"
+        minSdkVersion minSdkVersionValue
+        targetSdkVersion targetSdkVersionValue
+        versionCode versionCodeValue
+        versionName versionNameValue
+
+        jackOptions {
+            enabled true
+        }
+    }
+
+    dexOptions {
+        javaMaxHeapSize "8g"
+    }
+
+    lintOptions {
+        checkAllWarnings true
+        warningsAsErrors true
+    }
+
+    productFlavors {
+        standard { }
+    }
+}

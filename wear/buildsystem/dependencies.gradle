@@ -1,0 +1,16 @@
+final def playServicesVersion = "10.0.0"
+final def supportWearableVersion = "2.0.0-alpha3"
+
+final def compileDependencies = [
+        "com.google.android.gms:play-services-wearable:${playServicesVersion}",
+        "com.google.android.support:wearable:${supportWearableVersion}"
+]
+
+repositories {
+
+    jcenter()
+}
+
+dependencies {
+    compileDependencies.forEach{ dependency -> compile dependency }
+}

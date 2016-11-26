@@ -1,0 +1,21 @@
+buildscript {
+
+    final def androidCheckPluginVersion = '1.2.3'
+
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        classpath "com.noveogroup.android:check:${androidCheckPluginVersion}"
+    }
+}
+
+plugins {
+    id 'com.github.ben-manes.versions' version '0.13.0'
+}
+
+apply from: 'buildsystem/android.gradle'
+apply from: 'buildsystem/dependencies.gradle'
+apply from: 'buildsystem/plugin_versions.gradle'
+apply from: 'buildsystem/plugin_check.gradle'

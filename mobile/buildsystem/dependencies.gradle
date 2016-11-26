@@ -1,0 +1,8 @@
+repositories {
+
+    jcenter()
+}
+
+dependencies {
+    wearApp project(':wear')
+}

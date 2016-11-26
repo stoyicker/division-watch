@@ -1,0 +1,16 @@
+apply plugin: 'com.noveogroup.android.check'
+
+check {
+    abortOnError true
+    checkstyle {
+        reportHTML new File(project.buildDir, 'outputs/reports/android-check/checkstyle.html')
+    }
+    findbugs {
+        // TODO Do not skip FindBugs once I change to my version, which will be updated and hopefully compatible with Jack
+        skip true
+        reportHTML new File(project.buildDir, 'outputs/reports/android-check/findbugs.html')
+    }
+    pmd {
+        reportHTML new File(project.buildDir, 'outputs/reports/android-check/pmd.html')
+    }
+}
